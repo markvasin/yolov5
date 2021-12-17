@@ -22,15 +22,15 @@ class Albumentations:
             check_version(A.__version__, '1.0.3', hard=True)  # version requirement
 
             self.transform = A.Compose([
-                A.Blur(p=0.1),
-                A.MedianBlur(p=0.1),
-                A.ToGray(p=0.1),
-                A.GaussNoise(p=0.1),
-                A.RandomFog(p=0.1),
-                A.CLAHE(p=0.1),
-                A.RandomBrightnessContrast(p=0.1),
-                A.RandomGamma(p=0.1),
-                A.ImageCompression(quality_lower=75, p=0.1)],
+                A.Blur(p=0.3),
+                A.MedianBlur(p=0.3),
+                A.ToGray(p=0.3),
+                A.GaussNoise(p=0.3),
+                A.RandomFog(p=0.3),
+                A.CLAHE(p=0.3),
+                A.RandomBrightnessContrast(p=0.3),
+                A.RandomGamma(p=0.3),
+                A.ImageCompression(quality_lower=75, p=0.3)],
                 bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
 
             LOGGER.info(colorstr('albumentations: ') + ', '.join(f'{x}' for x in self.transform.transforms if x.p))
